@@ -1,0 +1,88 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exercise Tracker</title>
+    <meta name="description" content="freeCodeCamp: Apis and Microservices Projects - Exercise Tracker">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Exercise Tracker
+      </h1>
+      <p>
+        freeCodeCamp: Apis and Microservices Projects - Exercise Tracker
+      </p>
+    </header>
+
+    <main>
+      <h2>
+        Add new user
+      </h2>
+      <form action="/api/exercise/new-user" method="post">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input id="username" type="text" name="username" placeholder="user">
+        </div>
+        <hr>
+        <button type="submit">
+          Submit
+        </button>
+      </form>
+      
+      <h2>
+        Add new exercise log
+      </h2>
+      <form action="/api/exercise/add" method="post">
+        <div class="input-group">
+          <label for="userId">User ID</label>
+          <input id="userId" type="text" name="userId" placeholder="id" required>
+        </div>
+        <div class="input-group">
+          <label for="description">Description</label>
+          <input id="description" type="text" name="description" placeholder="description" required>
+        </div>
+        <div class="input-group">
+          <label for="duration">Duration</label>
+          <input id="duration" type="number" name="duration" placeholder="duration in minutes" min="1" required>
+        </div>
+        <div class="input-group">
+          <label for="date">Date</label>
+          <input id="date" type="text" name="date" placeholder="yyyy-mm-dd">
+        </div>
+        <hr>
+        <button type="submit">
+          Submit
+        </button>
+      </form>
+      
+      <div>
+        <h2>
+          GET users's exercise log
+        </h2>
+        <p><code>GET /api/exercise/log?{userId}[&amp;from][&amp;to][&amp;limit]</code></p>
+        <p><strong>{ }</strong> = required, <strong>[ ]</strong> = optional</p>
+        <p><strong>from, to</strong> = dates (yyyy-mm-dd); <strong>limit</strong> = number</p>
+      </div>
+    </main>
+
+  </body>
+</html>

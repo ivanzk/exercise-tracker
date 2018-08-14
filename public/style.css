@@ -1,0 +1,58 @@
+/* styles */
+/* called by your view template */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+}
+
+form {
+  flex: 1 1 100%;
+  border: 1px solid #222;
+  padding: 16px 32px;
+  margin: 16px 0px;
+  display: block;
+  background-color: #EEE;
+}
+
+.input-group {
+  display: flex;
+}
+
+.input-group > *:nth-child(1) {
+  flex: 1 1 200px;
+}
+
+.input-group > *:nth-child(2) {
+  flex: 100%;
+}
+
+form > * {
+  margin: 4px;
+}
+
+input {
+  padding: 4px;
+}
+
+button {
+  background-color: #FFF;
+  padding: 4px;
+  border: 1px solid #222;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+hr {
+  margin: 16px 0px;
+}
